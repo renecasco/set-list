@@ -10,14 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_160738) do
+ActiveRecord::Schema.define(version: 2018_11_27_165334) do
 
-  create_table "songs", force: :cascade do |t|
-    t.text     "title"
-    t.integer  "length"
-    t.integer  "play_count"
+  create_table "playlists", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.text "title"
+    t.integer "length"
+    t.integer "play_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "playlist_id"
   end
 
 end
